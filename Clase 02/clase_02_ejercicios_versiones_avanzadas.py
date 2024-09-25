@@ -30,38 +30,38 @@ Alternativa ejercicio 2
 """
 Alternativa ejercicio 1
 """
-# lista_compras = []
+lista_compras = []
 
 
-# def agregar_producto():
-#     producto = input("Ingresá el producto que querés agregar: ")
-#     lista_compras.append(producto)
-#     print(f"El producto '{producto}' ha sido agregado a la lista.")
+def agregar_producto():
+    producto = input("Ingresá el producto que querés agregar: ")
+    lista_compras.append(producto)
+    print(f"El producto '{producto}' ha sido agregado a la lista.")
 
 
-# def ver_lista():
-#     if len(lista_compras) == 0:
-#         print("La lista del supermercado está vacía.")
-#     else:
-#         print("Lista de compras en el supermercado:")
-#         for producto in lista_compras:
-#             print("- " + producto)
+def ver_lista():
+    if len(lista_compras) == 0:
+        print("La lista del supermercado está vacía.")
+    else:
+        print("Lista de compras en el supermercado:")
+        for producto in lista_compras:
+            print("- " + producto)
 
 
-# while True:
-#     print("\nOpciones:")
-#     print("1. Agregar un producto")
-#     print("2. Ver lista de productos")
-#     print("3. Salir")
+while True:
+    print("\nOpciones:")
+    print("1. Agregar un producto")
+    print("2. Ver lista de productos")
+    print("3. Salir")
 
-#     opcion = input("Ingresá una opción: ")
+    opcion = input("Ingresá una opción: ")
 
-#     if opcion == "1":
-#         agregar_producto()
-#     elif opcion == "2":
-#         ver_lista()
-#     elif opcion == "3":
-#         print("¡Chau!")
-#         break
-#     else:
-#         print("Opción inválida. Por favor, ingresá 1, 2 o 3.")
+    if opcion == "1":
+        agregar_producto()
+    elif opcion == "2":
+        ver_lista()
+    elif opcion == "3":
+        print("¡Chau!")
+        break
+    else:
+        print("Opción inválida. Por favor, ingresá 1, 2 o 3.")
