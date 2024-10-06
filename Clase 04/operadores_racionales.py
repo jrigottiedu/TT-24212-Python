@@ -20,7 +20,7 @@ flag_2 = False
 print(f"tipo de dato de flag_1 es: {type(flag_1)}")
 
 """
-memoria:
+memoria (a fines prácticos de comprender el uso, en la realidad es más complejo)
 50 ocupan 2 espacios
 50.25 ocupa 4 espacios
 """
