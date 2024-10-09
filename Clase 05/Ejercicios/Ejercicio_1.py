@@ -10,18 +10,30 @@ mostrar si se necesita hacer un nuevo pedido o no.
 
 """
 
-# Declaración de variables
-UMBRAL_STOCK = 10
 
-# Entrada
-stock_actual = int(input("Ingrese el stock actual del producto: "))
+# funciones
+def consultar_stock(id_producto):
+    return 5
 
-# Proceso
-if stock_actual >= UMBRAL_STOCK:
-    informe_stock = "No hacer pedido"
+
+# declaracion de variables
+UMBRAL_STOCK = 10  # hardcoding en el codigo/app
+
+# entrada (este dato esta en la Base de Datos)
+# stock_actual = int(input("Ingrese el stock"))
+# en nuestro programa el usaurio ingresa el producto o ID de producto
+id_producto = int(input("Ingrese el ID del producto a consultar: "))
+stock_actual = consultar_stock(
+    id_producto
+)  # consultar_stock es una funcion que devuelve el nivel de stock
+
+# comprobacion
+if stock_actual < UMBRAL_STOCK:
+    print(
+        f"Stock actual es {stock_actual} la diferencia {UMBRAL_STOCK - stock_actual} hacer pedido "
+    )
 else:
-    informe_stock = "Hacer pedido"
-# Salida
-print(f"Contol de stock: {informe_stock}")
+    print("Stock suficiente")
+# proceso
 
-
+# salida
