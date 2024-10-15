@@ -2,27 +2,23 @@ lista_productos = []
 lista_productos.clear()
 
 while True:
-    print()
-    print("-" * 30)
-    print("Menu de opciones")
-    print("1 Agregar producto")
-    print("2 Ver productos")
-    print("3 Salir")
-    opcion = input("Su opción: ")
+    print("Menú de opciones")
+    print("1. alta de producto")
+    print("2. listar producto")
+    print("3. salir")
+    opcion = input("\nIngrese la opción que desee: ").lower()
+
     if opcion == "1":
-        nombre_producto = input("Nombre del producto: ")
-        cantidad_producto = int(input("Cantidad del producto: "))
-        lista_productos.append([nombre_producto, cantidad_producto])
-        print(lista_productos)
-        print("Producto ingresado exitosamente!")
+        # Bloque de codigo para alta de producto
+        nombre_producto = input("Nombre de producto: ")
+        cantidad_producto = int(input("Cantidad: "))
+        lista_productos.append(nombre_producto)
+        lista_productos.append(cantidad_producto)
     elif opcion == "2":
-        # print(f"Producto: {nombre_producto} - cantidad: {cantidad_producto}")
-        indice = 0
-        while indice < len(lista_productos):
-            producto = lista_productos[indice]
-            print(f"Producto {producto[0]} - Cantidad: {producto[1]} ")
-            indice += 1
+        # Bloque de codigo para listar de producto
+        print(f"Lista de productos: {lista_productos}")
+
     elif opcion == "3":
         break
     else:
-        print("Opción no válida, por favor ingrese una opción válida")
+        print("Opcione  no válida, por favor intente de nuevo")
