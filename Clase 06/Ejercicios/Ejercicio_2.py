@@ -8,9 +8,17 @@ Al final, el programa debe mostrar el precio aceptado.
 
 """
 
-precio_producto = float(input("Ingrese el precio del producto: "))
-while precio_producto <= 0:
-    print("Error: El precio no puede ser menor o igual a 0.")
-    precio_producto = float(input("\nIngrese el precio del producto: "))
+condicion_global = True
+while condicion_global == True:
+    while True:
+        precio_producto = float(input("Ingrese el precio del producto: "))
+        while precio_producto <= 0:
+            print("Error: El precio no puede ser menor o igual a 0.")
+            precio_producto = float(input("\nIngrese el precio del producto: "))
 
-print(f"El precio ingresador fue {precio_producto}")
+        print(f"El precio ingresador fue {precio_producto}")
+        continuar = input(
+            "Presions  's' para continuar o cualquier otra tecla para salir: "
+        ).lower()
+        if continuar == "s":
+            break

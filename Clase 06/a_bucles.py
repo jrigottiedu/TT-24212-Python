@@ -74,7 +74,9 @@ print()  # print para generar un espacio en blanco
 while contador_meses < CANTIDAD_MESES:
     contador_meses = contador_meses + 1  # incrememtamos el contador
     ingreso = float(input(f"Ingrese el sueldo del mes {contador_meses}: "))
-    acumulador_sueldos = acumulador_sueldos + ingreso  # acumulamos los ingresos mensuales
+    acumulador_sueldos = (
+        acumulador_sueldos + ingreso
+    )  # acumulamos los ingresos mensuales
     print(f"sumar parcial {acumulador_sueldos} ")  # impresiones parciales
 
 promedio = acumulador_sueldos / contador_meses  # calculamos el promedio
@@ -95,7 +97,9 @@ print(cadena)
 while indice < len(cadena):  # len(cadena) para cadena = "Python" retorna 6
     # print(cadena[indice]) # en cada iteración retorna P - y - t - h - o - n
     print(f"cadena[{indice}]: {cadena[indice]}")  # más descriptivo
-    indice += 1  # incrementamos el contador/indice para que apunte al siguiente caracter
+    indice += (
+        1  # incrementamos el contador/indice para que apunte al siguiente caracter
+    )
 
 # ----------------------------------------------------------------------
 # Más de Bucles y cadenas
@@ -103,7 +107,9 @@ while indice < len(cadena):  # len(cadena) para cadena = "Python" retorna 6
 # la cadena origina Python en PyThOn
 
 cadena = "Python"
-indice = 0  # hace las veces de un contador y permite recorrer cada caracter de la cadena
+indice = (
+    0  # hace las veces de un contador y permite recorrer cada caracter de la cadena
+)
 print(cadena)
 
 while indice < len(cadena):  # len(cadena)=> 6
