@@ -6,7 +6,7 @@ lista_productos.clear()
 while True:
     print("Menú de opciones")
     print("1. alta de producto")
-    print("2. listar producto")
+    print("2. mostrar producto")
     print("3. salir")
 
     # Pedimos al usuario que ingrese una opción y la convertimos a minúscula
