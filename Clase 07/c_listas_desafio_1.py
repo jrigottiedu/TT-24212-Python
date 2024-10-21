@@ -1,6 +1,6 @@
-# Declaramos una lista
-lista_jugadores = []
-lista_jugadores.clear()
+# Declaramos variables
+jugador_nombre = None
+jugador_camiseta = None
 
 # Comenzamos con un Bucle del tipo while, que se ejecutará hasta que el usuario ingrese 3
 while True:
@@ -20,16 +20,12 @@ while True:
     if opcion == "1":
         jugador_nombre = input("Nombre y Apellido del jugador: ")
         jugador_camiseta = int(input("Camiseta: "))
-        elemento_jugador = [jugador_nombre, jugador_camiseta]
-        lista_jugadores.append(elemento_jugador)
+
     # Opción 2: Mostrar Juagdores
     elif opcion == "2":
         # Bloque de codigo para mostrar el plantel
-        # print(f"Jugador: {jugador_nombre} - Camiseta: {jugador_camiseta}")
-        indice = 0
-        while indice < len(lista_jugadores):
-            print(f"Jugador: {lista_jugadores[indice][0]} - Camiseta: {lista_jugadores[indice][1]}")
-            indice += 1
+        print(f"Jugador: {jugador_nombre} - Camiseta: {jugador_camiseta}")
+
     # Opción 3: el Bucle while debe terminar para salir
     elif opcion == "3":
         break

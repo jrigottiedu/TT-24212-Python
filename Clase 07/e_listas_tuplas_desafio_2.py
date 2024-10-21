@@ -1,5 +1,9 @@
 """
-Desafío: refactorizamos el código del Ejercio 2 - clase 2 incorporando lo aprendido
+Desafío:Refactorizamos el código del Ejercio 2 - clase 2 
+1. Incorporamos validación de datos
+2. Incorporamos Tuplas
+3. Incorporamos Listas
+
 
 Ingreso promedio
 
@@ -9,33 +13,18 @@ Por último, mostrar una leyenda que diga “El ingreso promedio en el semestre 
 """
 
 # Declaración e inicialización de variables
-tupla_meses = (
-    "Enero",
-    "Febrero",
-    "Marzo",
-    "Abril",
-    "Mayo",
-    "Junio",
-    "Julio",
-    "Agosto",
-    "Septiembre",
-    "Octubre",
-    "Noviembre",
-    "Diciembre",
-)
-indice = 0
+CANTIDAD_MESES = 6  # la usamos como constante
+contador_meses = 0  # contador
 acumulador_sueldos = 0  # acumulador
 
 print()  # print para generar un espacio en blanco
 
 # Bucle while que se ejecuta tantas veces como sea CANTIDAD_MESES
-while indice < len(tupla_meses):
-    ingreso = float(input(f"Ingrese el sueldo del mes {tupla_meses[indice]}: "))
+while contador_meses < CANTIDAD_MESES:
+    contador_meses = contador_meses + 1  # incrememtamos el contador
+    ingreso = float(input(f"Ingrese el sueldo del mes {contador_meses}: "))
     acumulador_sueldos = acumulador_sueldos + ingreso  # acumulamos los ingresos mensuales
     print(f"sumar parcial {acumulador_sueldos} ")  # impresiones parciales
-    indice += 1  # incrememtamos el indice
 
-promedio = acumulador_sueldos / len(tupla_meses)  # calculamos el promedio
+promedio = acumulador_sueldos / contador_meses  # calculamos el promedio
 print(f"\nEl ingreso promedio en el semestre es de {promedio}")
-
-# Mejorar el código para que solo se puedan ingresar montos cero o positivos

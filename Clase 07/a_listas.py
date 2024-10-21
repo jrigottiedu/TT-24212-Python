@@ -2,7 +2,7 @@
 Colecciones / Arreglos
 
 LISTAS
-
+"""
 
 # Declaramos una lista vacía
 lista = []
@@ -24,7 +24,6 @@ while indice < len(lista):
     print(f"lista[{indice}] es: {lista[indice]}")
     indice += 1
 
-"""
 
 # Los elementos pueden ser Heterogéos
 # [0]: producto [1]: cantidad [2]: precio [3]: estado
