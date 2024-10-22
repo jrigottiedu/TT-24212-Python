@@ -1,19 +1,30 @@
 # Metodos de listas
+lista = ["manxana", 10, "pera", "kiwi"]
 
-lista = ["manzana", "durazno", "melon"]
-print(f"\nLista original {lista} \n")
-# lista.append("kiwi") #Inserta un elemento al final de la lista
-# lista.remove("melon") #remueve el elemento indicado
-# lista.pop()  # remueve el último elemento de la lista
-# lista.pop(0)  # remueve el elemtno indicado con el ídice como argumento
-# lista.insert(2, "frutilla") #inserta en la posición indicada por el índice
-# lista.sort()  # ordena la lista, los elementos deben ser comparables
-# posicion = lista.index("durazno")
-# print(posicion)
+# agregar otro elemento a la lista
+lista.append("durazno")
+lista.append(10)
+print(lista)
 
-print(f"Lista modificada {lista} \n")
+print()
+indice = 0
+while indice < len(lista):
+    print(f"lista[{indice}]: {lista[indice]}")
+    indice += 1
+print()
+
+# remover elemento con remove
+lista.remove(10)
+print("\nLista despues de remover el 10", lista)
 
 indice = 0
 while indice < len(lista):
     print(f"lista[{indice}]: {lista[indice]}")
     indice += 1
+
+# remover o quitar elementos con pop
+lista.pop()  # remover el último elemento
+print(lista)
+
+lista.pop(2)  # remover el último elemento
+print(lista)

@@ -2,49 +2,74 @@
 Colecciones / Arreglos
 
 LISTAS
-"""
 
-# Declaramos una lista vacía
+
+# Declaracion tipo de datos simples
+numero = None
+cadena = ""
+
+# Declaracion de una lista vacia
 lista = []
 
-# Declaramos e inicializamos una lista
-lista = ["manzana", "durazno", "melon"]
-print(f"\nlista es: {lista}")
+# Declara e inicializar una lista
+lista = ["manzana", "pera", "kiwi"]
+print(lista)
 
-# Cada elemento de la lista tiene una posición
-# Accedemos a cada elemento a través de un índice
-print(f"\nlista[0] es: {lista[0]}")
-print(f"lista[1] es: {lista[1]}")
-print(f"lista[2] es: {lista[2]}")
+print(lista[1])  # imprime el primer elemento de la lista
 
-# Recorremos la lista con un while
 print()
+
 indice = 0
-while indice < len(lista):
-    print(f"lista[{indice}] es: {lista[indice]}")
+while indice < len(lista):  # len(lista) nos devuelve la longitud => 3
+    # print(lista[indice])
+    print(f"lista[{indice}]: {lista[indice]}")
     indice += 1
 
+    """
 
-# Los elementos pueden ser Heterogéos
-# [0]: producto [1]: cantidad [2]: precio [3]: estado
-lista = ["durazno", 2, 350.99, False]
+# estructua 0: producto, 1: cantidad, 2: bool
+elemento_0 = ["manzana", 10, False]
+elemento_1 = ["pera", 5, False]
 
-
-# lista de listas => tabla o matriz
-elemento_0 = ["manzana", 2, 350.99, False]
-elemento_1 = ["durazno", 3, 450.99, False]
-
+# Armar una lista de lista
+# Lista de productos a comprar
 lista_super = [elemento_0, elemento_1]
-print(lista_super)
+# print(lista_super)
 
-indice = 0
-while indice < len(lista_super):
-    # print(f"Elemento {indice+1}: {lista_super[indice]}")
-    print(f"Producto: {lista_super[indice][0]} Cantidad: {lista_super[indice][1]}")
+"""
+iteramos la lista_super de forma básica
+indice = 0  # declaro el contador / indice
+while indice < len(lista_super): #len(lista_super) => 2
+    print(lista_super[indice])
     indice += 1
 
 
-# Métodos
-elemento_0[5] = 5
-elemento_0[3] = True
-# elemento1[4] = "comprar en Carrefour" #IndexError: list assignment index out of range
+# iteramos la lista_super de forma completa
+indice = 0  # declaro el contador / indice
+while indice < len(lista_super):  # len(lista_super) => 2
+    elemento = lista_super[indice]
+    print(f"Producto: {elemento[0]}, cantidad: {elemento[1]}")
+    indice += 1
+
+
+indice_lista = 0  # declaro el contador / indice
+while indice_lista < len(lista_super):  # len(lista_super) => 2
+    # guardo cada elemento de lista_super en elemento
+    elemento = lista_super[indice_lista]
+    # permite recorrer la sub-lista
+    indice_sublista = 0
+    # itero la sublista
+    while indice_sublista < len(elemento):
+        # imprimo cada elemento de la sub-lista
+        print(f"{elemento[indice_sublista]}")
+        # incremento el contador de la sub-lista
+        indice_sublista += 1
+    # incremento el contador de la lista
+    indice_lista += 1
+"""
+
+# Introduccion a metodos
+lista = ["manxana", "pera", "kiwi"]
+lista[0] = "manzana"
+lista[3] = "banana"
+print(lista)
