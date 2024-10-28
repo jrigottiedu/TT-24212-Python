@@ -3,6 +3,7 @@ Métodos adicionales de cadenas
 """
 
 cadena = "aprendiendo pYtHoN "
+print(type(cadena))
 print(cadena.lower())  # convertir cadena a minúscula
 print(cadena.upper())  # convertir cadena a mayúscula
 print(cadena.title())  # convertir cadena a (capitalize)
