@@ -5,7 +5,7 @@ productos = []
 # Función principal para el sistema de inventario (NO ELIMINAR)
 def main():
     # AQUÍ PUEDES COMENZAR A DESARROLLAR LA SOLUCIÓN
-    print("")
+    print("Código en desarrollo")
 
 
 # Ejecución de la función main() - (NO ELIMINAR)
