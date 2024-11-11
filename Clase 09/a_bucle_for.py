@@ -7,7 +7,7 @@ tuplas
 str
 diccionarios
 slice de lista (sub lista)
-
+"""
 
 cadena = "Python"
 indice = 0
@@ -35,7 +35,6 @@ for fruta in lista:
         break
 
 
-
 productos = [["manzana", 10], ["pera", 20], ["kiwi", 25]]  # Lista de listas
 
 for (
@@ -46,7 +45,6 @@ for (
     print(producto[0])  # manzana, pera, kiwi
     print(f"Producto {producto[0]} - cantidad {producto[1]}")  # manzana, pera, kiwi
 
-    
 
 # queremos ingresar los primeros 3 sueldos del año
 
@@ -67,7 +65,7 @@ lista = [0, 1, 2]
 # for mes in lista:  # range devuelve una lista numerica q tiene fin
 for mes in lista:  # range devuelve una lista numerica q tiene fin
     print("mes con lista: ", mes)
-"""
+
 
 lista_frutas = ["manzana", "pera", "kiwi", "durazno", "melon"]
 
