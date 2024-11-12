@@ -1,109 +1,100 @@
+import os
+
+
+def clear_terminal():
+    # Para Windows
+    if os.name == "nt":
+        os.system("cls")
+    # Para Linux y macOS
+    else:
+        os.system("clear")
+
+
+# Diccionarios
+
+# Parejas clave-valor
+
+clear_terminal()  # Limpia la terminal
 """
-Diccionarios
-
-Parejas clave-valor
-
-
-# Lista de productos
-productos = ["manzana", "kiwi", "durazno"]
-cantidades = [10, 30, 5]
-
-# Definimos la estructura de la lista_productos:
-# producto[0]: "nombre"
-# producot[1]: "cantidad"
-lista_productos = [["manzana", 10], ["kiwi", 30], ["durazno", 5]]
-# print(lista_productos)
-for producto in lista_productos:
-    print(f"Producto: {producto[0]}, Cantidad: {producto[1]}")
-
-
+# estructura 0: nombre, 1: cantidad, 2: precio
+productos = ["manzana", 10, 1500]
+print(f"lista productos {productos}")
 """
 
-# declaracion e inicializacion de un diccionario
-producto = {"nombre": "Manzana", "cantidad": 10}
-print(producto)
-
+# producto = {"nombre": "manzana", "cantidad": 10}
 """
-# Acceder a los valores del diccionario version_1 []
-print("Accedemos a los valores del diccionario usando []")
-print(producto["nombre"])  # clave "nombre" devuelve "manzana"
-print(producto["cantidad"])  # clave "cantidad" devuelve 10
+print(f"diccionario productos {producto}")
+
+# acceder a los valores de un diccionario []
+print("Accedemos a los valores con []")
+print(producto["nombre"])  # [clave]
+print(producto["cantidad"])  # [clave]
+
+# acceder a los valores de un diccionario get
+print("Accedemos a los valores con get")
+print(producto.get("nombre"))
+print(producto.get("cantidad"))
 
 
-# Acceder a los valores del diccionario version_2 método get
-print("Accedemos a los valores del diccionario usando get")
-print(producto.get("nombre"))  # clave "nombre" devuelve "manzana"
-print(producto.get("cantidad"))  # clave "nombre" devuelve 10
+clear_terminal()
+# Actualizar
+print(producto.get("cantidad"))  # 10
+producto["cantidad"] = 20  # actualizo a 20
+print(producto.get("cantidad"))
+
+# update
+producto.update({"cantidad": 30})  # actualizo a 30
+print(producto.get("cantidad"))
 
 
-# Actualizar valores de nuestro diccionario
-print(f"\nActualizamos cantidad actual {producto.get("cantidad")} a 25 ")
-producto["cantidad"] = 25
-print(f"Nuevo valor {producto.get("cantidad")} ")
-
-print(f"\nActualizamos cantidad actual {producto.get("cantidad")} a 35 ")
-producto.update({"cantidad": 35})
-print(f"Nuevo valor {producto.get("cantidad")} ")
-
-
-# Actualizar valores de nuestro diccionario
-print(f'\nAgregamos el par clave "precio" con el valor 1500')
+# agregar
+print("original", producto)
 producto["precio"] = 1500
-print(producto)
+print("agregado de precio", producto)
 
 
-# Eliminar un valor de nuestro diccionario
-print(f"\nEliminamos la clave cantidad precio usando del")
-del producto["precio"]
-print(producto)
+# Lista => []
+lista = ["manzana", 10, 1500]  # referencia es el indice
+lista[1] = 20
+# 0: manzana
+# 1: kiwi
+# Diccionario => {}
+diccionario = {
+    "nombre": "manzana",
+    "cantidad": 10,
+    "precio": 1500,
+}  # referencia es la clave
+diccionario["cantidad"] = 20
 
-producto["precio"] = 1500
-print(f"\nEliminamos la clave cantidad precio usando pop")
-producto.pop("precio")
-print(producto)
+# frutax es la clave : valor
+# fruta1 es manzana
+# fruta2 es kiwi
 
-"""
-
-# Recorremos o iteramos un diccionario
-print("\nfor clave in producto:")
-for clave in producto:
-    # print(f"clave: {clave} - {producto[clave]}")
-    print(f"{clave} - {producto.get(clave)}")
-
-print("\nfor clave in producto.keys():")
-for clave in producto.keys():
-    # print(f"clave: {clave} - {producto[clave]}")
-    print(clave)
-
-print("\nfor clave in producto.values():")
-for valor in producto.values():
-    # print(f"clave: {clave} - {producto[clave]}")
-    print(valor)
-
-print("\nfor clave, valor in producto.items():")
-for clave, valor in producto.items():
-    # print(f"clave: {clave} - {producto[clave]}")
-    print(f"{clave}: {valor}")
-
+plantilla_producto ={
+    "nombre": None,
+    "cantidad": None,
+    "precio": None,
+}
 
 """
-lista_productos = []
 
-# Diccionario producto_1
-producto_1 = {
-    "nombre": "Manzana",
+diccionario_producto = {
+    "nombre": "manzana",
     "cantidad": 10,
 }
+# print(diccionario_producto["nombre"])
+# print(diccionario_producto["cantidad"])
+for claves in diccionario_producto.keys():  #
+    print(claves)
+    # print(f"{clave}: {diccionario_producto[clave]}")
+    # print(f"{clave} - {values}")
 
-lista_productos.append(producto_1)
+for values in diccionario_producto.values():  #
+    print(values)
+    # print(f"{clave}: {diccionario_producto[clave]}")
+    # print(f"{clave} - {values}")
 
-# Diccionario producto_2
-producto_2 = {
-    "nombre": "Kiwi",
-    "cantidad": 35,
-}
-
-lista_productos.append(producto_2)
-
-print(f"{lista_productos[0][]}")
-"""
+for items in diccionario_producto.items():  #
+    print(f"{items[0]} {items[1]}")
+    # print(f"{clave}: {diccionario_producto[clave]}")
+    # print(f"{clave} - {values}")
