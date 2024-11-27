@@ -149,8 +149,8 @@ lista_global = [1, 2]  # listas que son mutables
 
 
 # Declaramos una función que incrementa un número
-def incrementar(numero_global):
-    # global numero_global
+def incrementar():
+    global numero_global
     numero_global += 1
     print("numero_global dentro de la funcion", numero_global)
     lista_global[0] += 1
