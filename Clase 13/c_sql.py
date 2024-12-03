@@ -1,6 +1,6 @@
 import sqlite3
 
-conexion = sqlite3.connect("pfi.db")
+conexion = sqlite3.connect("inventario.db")
 conexion.row_factory = sqlite3.Row
 cursor = conexion.cursor()
 cursor.execute("SELECT * FROM productos")
