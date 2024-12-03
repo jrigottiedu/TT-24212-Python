@@ -48,6 +48,19 @@ def mostrar_menu():
 def registrar_producto():
     # Cuerpo de la función
     print("REGISTRO DE PRODUCTO")
+    # pedir al usuario (variable_nombre, descripcion....)
+    # agregar validacion...
+    # usar un metodo de sqlite, que le vamos a pasar esta query
+    """
+    INSERT INTO productos (
+        nombre, 
+        descripcion, 
+        categoria, 
+        cantidad, 
+        precio) 
+    VALUES 
+    (variable_nombre, 'Un clásico atemporal de Antoine de Saint-Exupéry', 'infantil', 50, 1580 )
+    """
 
 
 # Función que muestra los productos almacenados en nuestro inventario
