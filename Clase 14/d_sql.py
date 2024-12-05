@@ -5,7 +5,9 @@ import sqlite3
 # IF NOT EXISTS es una excepción para que no se cree en caso que ya exista
 def crear_tabla_productos():
     try:
-        conexion = sqlite3.connect("D:/Dailutb/TT 2C2024 Python/Clases/entregaFinal/inventario.db")
+        conexion = sqlite3.connect(
+            r"C:\Users\JPy\Documents\TT24212 Python\TT-24212-Python\entregaFinal\inventario.db"
+        )
         cursor = conexion.cursor()
         cursor.execute(
             """CREATE TABLE IF NOT EXISTS productos (
@@ -46,7 +48,7 @@ def insertar_registro(diccionario):
 
 
 # Llamada a Funciones
-
+crear_tabla_productos()
 
 # Código para testing
 # crear_tabla_productos()

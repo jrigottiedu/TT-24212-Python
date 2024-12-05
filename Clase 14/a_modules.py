@@ -1,6 +1,7 @@
 import math
 import random
 
+
 numero = 4.7
 redondeo = math.floor(numero)
 print(f"{numero} redondeado es: {redondeo}")
