@@ -12,7 +12,7 @@ def menu_mostrar_opciones():
     print("-" * 30)
     print(
         """
-        1. Agregar producto
+          1. Agregar producto
           2. Mostrar producto
           3. Actualizar
           4. Eliminar
@@ -31,7 +31,7 @@ def menu_mostrar_opciones():
 menu_registrar_producto()
 
 1. solicita al usuario el ingreso de los datos
-2. valida los valores y tipos de datos ingresados
+2. *** valida los valores y tipos de datos ingresados
 3. almacena los valores en un diccionario llamado producto
 4. llama a db_insertar_producto(producto) y le pasa como argumento el diccionario producto para que lo inserte en la base de datos
 """
@@ -48,16 +48,17 @@ def menu_registrar_producto():
     # TO DO: VALIDAR VALORES Y TIPOS DE DATOS
 
     # Creamos un diccionario temporal
-    producto = {
-        "nombre": nombre,
-        "descripcion": descripcion,
-        "categoria": categoria,
-        "cantidad": cantidad,
-        "precio": precio,
-    }
+    # producto = {
+    #     "nombre": nombre,
+    #     "descripcion": descripcion,
+    #     "categoria": categoria,
+    #     "cantidad": cantidad,
+    #     "precio": precio,
+    # }
 
-    print("\n", producto)
-    # TO DO: PERSISTIR LOS DATOS EN LA TABLA PRODUCTOS
+    # print("\n", producto)
+    db_insertar_producto(nombre, descripcion, categoria, cantidad, precio)
+    print("Registro insertado exitosamente!")
 
 
 """
