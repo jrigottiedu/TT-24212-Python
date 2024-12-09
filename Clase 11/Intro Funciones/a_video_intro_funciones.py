@@ -119,7 +119,7 @@ def mostrar_argumentos(numero_1, numero_2):
 
 
 # # *** Alcance de las variables ***
-# variable_global = "Python"
+variable_global = "Python"
 
 
 # Declaramos una función que hace un print en consola
