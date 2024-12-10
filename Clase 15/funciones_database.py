@@ -11,22 +11,8 @@ Esta función utiliza sqlite3 para conectarse con la base "inventario.db" y crea
 
 
 def db_crear_tabla_productos():
-    conexion = sqlite3.connect(ruta_db)
-    cursor = conexion.cursor()
-    cursor.execute(
-        """
-                   CREATE TABLE IF NOT EXISTS productos (
-                       id INTEGER PRIMARY KEY AUTOINCREMENT,
-                       nombre TEXT NOT NULL,
-                       descripcion TEXT,
-                       categoria TEXT NOT NULL,
-                       cantidad INTEGER NOT NULL,
-                       precio REAL NOT NULL
-                   )
-                   """
-    )
-    conexion.commit()
-    conexion.close()
+    print("\n PENDIENTE DESARROLLO")
+    # TO DO: DESARROLLAR SEGUN DESCRIPCION
 
 
 """
