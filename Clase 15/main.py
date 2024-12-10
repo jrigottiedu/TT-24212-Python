@@ -1,8 +1,10 @@
 # ARMAMOS UN ARCHIVO DESDE CERO SEGUN LOS REQUERIMIENTOS FINALES
 
 # IMPORTAMOS FUNCIONES
-from funciones_menu import *
-from funciones_database import db_crear_tabla_productos
+from funciones_menu import *  # importa todas las funciones del archivo funciones_menu.py
+from funciones_database import (
+    db_crear_tabla_productos,
+)  # #importa db_crear_tabla_productos del archivo funciones_database.py
 
 
 # Declaramos la funcion principal main

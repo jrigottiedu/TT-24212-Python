@@ -1,7 +1,7 @@
 import sqlite3
 
 # DECLARACION DE CONSTANTES
-ruta_db = r"D:\Dailutb\TT 2C2024 Python\Clases\backup\inventario.db"
+ruta_db = r"C:\Users\JPy\Documents\TT24212 Python\TT-24212-Python\entregaFinal\inventario.db"
 
 
 # DECLARACION DE FUNCIONES
@@ -70,10 +70,12 @@ def db_get_productos():
     cursor = conexion.cursor()
     query = "SELECT * FROM productos"
     cursor.execute(query)
-    lista_productos = cursor.fetchall()
+    lista_productos = cursor.fetchall()  # retorna una lista de tuplas
     conexion.close()
     return lista_productos
 
+
+# cursor.fetchone() retorno solo una tupla
 
 """
 db_get_producto_by_id(id)

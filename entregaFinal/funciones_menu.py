@@ -5,14 +5,20 @@ from funciones_database import *
 # ******************************************************************
 
 
-# Funcion que muestra el menú
+"""
+menu_mostrar_opciones()
+1. muestra en consola las opciones disponibles
+2. captura y retorna la opcion seleccionada
+"""
+
+
 def menu_mostrar_opciones():
     print("-" * 30)
     print(" Menú principal")
     print("-" * 30)
     print(
         """
-        1. Agregar producto
+          1. Agregar producto
           2. Mostrar producto
           3. Actualizar
           4. Eliminar

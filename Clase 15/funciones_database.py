@@ -1,18 +1,32 @@
 import sqlite3
 
 # DECLARACION DE CONSTANTES
-ruta_db = r"D:\Dailutb\TT 2C2024 Python\Clases\Clase 15\inventario.db"
+ruta_db = r"C:\Users\JPy\Documents\TT24212 Python\TT-24212-Python\Clase 15\inventario.db"
 
 """
 db_crear_tabla_productos()
 
-Esta función utiliza sqlite3 para conectarse con la base "inventario.db" y crea la tabla productos
+Esta función utiliza sqlite3 para crear/conectarse con la base "inventario.db" y crea la tabla productos
 """
 
 
 def db_crear_tabla_productos():
-    print("\n PENDIENTE DESARROLLO")
-    # TO DO: DESARROLLAR SEGUN DESCRIPCION
+    conexion = sqlite3.connect(ruta_db)
+    cursor = conexion.cursor()  # siempre igual
+    cursor.execute(
+        """ 
+CREATE TABLE IF NOT EXISTS productos (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+nombre TEXT NOT NULL,
+descripcion TEXT,
+categoria TEXT NOT NULL,
+cantidad INTEGER NOT NULL,
+precio REAL NOT NULL
+)
+"""
+    )
+    conexion.commit()
+    conexion.close()
 
 
 """
@@ -23,9 +37,14 @@ db_insertar_producto(producto)
 """
 
 
-def db_insertar_producto(producto):
-    print("\n PENDIENTE DESARROLLO")
-    # TO DO: DESARROLLAR SEGUN DESCRIPCION
+def db_insertar_producto(nombre, descripcion, categoria, cantidad, precio):
+    conexion = sqlite3.connect(ruta_db)
+    cursor = conexion.cursor()  # siempre igual
+    query = "INSERT INTO productos (nombre, descripcion, categoria, cantidad, precio) VALUES (?, ?, ?, ?, ?)"
+    placeholder = (nombre, descripcion, categoria, cantidad, precio)
+    cursor.execute(query, placeholder)
+    conexion.commit()
+    conexion.close()
 
 
 """
