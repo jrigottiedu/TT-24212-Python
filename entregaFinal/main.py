@@ -35,7 +35,7 @@ def main():
             print("Opción no válida. Por favor, elija una opción válida.")
 
         continuar = input(
-            "Ingrese 's' para salir o cualquier tecla para conitnuar: "
+            "\nIngrese 's' para salir o cualquier tecla para conitnuar: "
         ).lower()  # pausa para que el usuario pueda ver
         if continuar == "s":
             print("\nGracias por usar nuestra App")
