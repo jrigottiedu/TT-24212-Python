@@ -62,8 +62,13 @@ db_get_productos()
 
 
 def db_get_productos():
-    print("\n PENDIENTE DESARROLLO")
-    # TO DO: DESARROLLAR SEGUN DESCRIPCION
+    conexion = sqlite3.connect(ruta_db)
+    cursor = conexion.cursor()
+    query = "SELECT * FROM productos"
+    cursor.execute(query)
+    lista_productos = cursor.fetchall()
+    conexion.close()
+    return lista_productos
 
 
 """
@@ -75,8 +80,14 @@ db_get_producto_by_id(id)
 
 
 def db_get_producto_by_id(id):
-    print("\n PENDIENTE DESARROLLO")
-    # TO DO: DESARROLLAR SEGUN DESCRIPCION
+    conexion = sqlite3.connect(ruta_db)
+    cursor = conexion.cursor()
+    query = "SELECT * FROM productos WHERE id = ?"
+    placeholders = (id,)
+    cursor.execute(query, placeholders)
+    producto = cursor.fetchone()
+    conexion.close()
+    return producto
 
 
 """
@@ -87,8 +98,13 @@ db_actualizar_producto(id, nueva_cantidad)
 
 
 def db_actualizar_producto(id, nueva_cantidad):
-    print("\n PENDIENTE DESARROLLO")
-    # TO DO: DESARROLLAR SEGUN DESCRIPCION
+    conexion = sqlite3.connect(ruta_db)
+    cursor = conexion.cursor()
+    query = "UPDATE productos SET cantidad = ? WHERE id = ?"
+    placeholders = (nueva_cantidad, id)
+    cursor.execute(query, placeholders)
+    conexion.commit()
+    conexion.close()
 
 
 """
@@ -99,8 +115,13 @@ db_eliminar_producto(id)
 
 
 def db_eliminar_producto(id):
-    print("\n PENDIENTE DESARROLLO")
-    # TO DO: DESARROLLAR SEGUN DESCRIPCION
+    conexion = sqlite3.connect(ruta_db)
+    cursor = conexion.cursor()
+    query = "DELETE FROM productos WHERE id = ?"
+    placeholders = (id,)
+    cursor.execute(query, placeholders)
+    conexion.commit()
+    conexion.close()
 
 
 """
@@ -111,5 +132,11 @@ db_get_productos_by_condicion(minimo_stock)
 
 
 def db_get_productos_by_condicion(minimo_stock):
-    print("\n PENDIENTE DESARROLLO")
-    # TO DO: DESARROLLAR SEGUN DESCRIPCION
+    conexion = sqlite3.connect(ruta_db)
+    cursor = conexion.cursor()
+    query = "SELECT * FROM productos WHERE cantidad < ?"
+    placeholders = (minimo_stock,)
+    cursor.execute(query, placeholders)
+    lista_productos = cursor.fetchall()
+    conexion.close()
+    return lista_productos
