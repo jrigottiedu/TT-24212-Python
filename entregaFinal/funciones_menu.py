@@ -1,4 +1,5 @@
 from funciones_database import *
+from funciones_validacion import *
 
 # ******************************************************************
 # DECLARACION DE FUNCIONES
@@ -43,11 +44,11 @@ menu_registrar_producto()
 
 def menu_registrar_producto():
     print("\nIngrese los siguientes datos del producto:")
-    nombre = input("Nombre: ")
-    descripcion = input("Descripción: ")
-    categoria = input("Categoría: ")
-    cantidad = int(input("Cantidad: "))
-    precio = float(input("Precio: "))
+    nombre = validacion_get_nombre()
+    descripcion = validacion_get_descripcion()
+    categoria = validacion_get_categoria()
+    cantidad = validacion_get_cantidad()
+    precio = validacion_get_precio()
 
     # Creamos un diccionario temporal
     producto = {
