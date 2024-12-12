@@ -48,10 +48,10 @@ def menu_registrar_producto():
         try:
             cantidad = int(input("Cantidad: "))
             break
-        except ValueError:
-            # except Exception as error:
-            print(f"Error: debe ingresar un número entero")
-            # print(f"ERROR cantidad: {error}")
+        # except ValueError:
+        except Exception as error:
+            # print(f"Error: debe ingresar un número entero")
+            print(f"ERROR cantidad: {error}")
 
     # Validar el precio
     while True:
