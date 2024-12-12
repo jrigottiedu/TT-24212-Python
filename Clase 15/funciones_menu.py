@@ -42,8 +42,26 @@ def menu_registrar_producto():
     nombre = input("Nombre: ")
     descripcion = input("Descripción: ")
     categoria = input("Categoría: ")
-    cantidad = int(input("Cantidad: "))
-    precio = float(input("Precio: "))
+
+    # Ingreso y validacion de la cantidad
+    while True:
+        try:
+            cantidad = int(input("Cantidad: "))
+            break
+        except ValueError:
+            # except Exception as error:
+            print(f"Error: debe ingresar un número entero")
+            # print(f"ERROR cantidad: {error}")
+
+    # Validar el precio
+    while True:
+        try:
+            # Codigo a testear
+            precio = float(input("Precio: "))
+            break
+        except Exception as error:
+            # Lo que hace cuando encuentra exception
+            print(f"ERROR precio: {error}")
 
     # TO DO: VALIDAR VALORES Y TIPOS DE DATOS
 
@@ -57,8 +75,11 @@ def menu_registrar_producto():
     # }
 
     # print("\n", producto)
-    db_insertar_producto(nombre, descripcion, categoria, cantidad, precio)
-    print("Registro insertado exitosamente!")
+    resultado = db_insertar_producto(nombre, descripcion, categoria, cantidad, precio)
+    if resultado == True:
+        print("Registro insertado exitosamente!")
+    else:
+        print("Algo fallo")
 
 
 """
@@ -72,8 +93,13 @@ menu_mostrar_productos()
 
 
 def menu_mostrar_productos():
-    print("\n PENDIENTE DESARROLLO")
-    # TO DO: DESARROLLAR SEGUN DESCRIPCION
+    lista_productos = db_get_productos()  # retorna una lista
+
+    if not lista_productos:
+        print("No hay productos que mostrar")
+    else:
+        for producto in lista_productos:
+            print(producto)
 
 
 """"
@@ -88,8 +114,15 @@ def menu_actualizar_producto()
 
 
 def menu_actualizar_producto():
-    print("\n PENDIENTE DESARROLLO")
-    # TO DO: DESARROLLAR SEGUN DESCRIPCION
+    id = int(input("Ingrese el id del producto a actualizar"))
+    producto = db_get_producto_by_id(id)
+    if producto:
+        print(producto)
+        nueva_cantidad = int(input("Ingrese la nueva cantidad"))
+        db_actualizar_producto(id, nueva_cantidad)
+        print("Cantidad actualizada exitosamente!")
+    else:
+        print("No existe el producto con el id ingresado")
 
 
 """
@@ -103,8 +136,14 @@ menu_eliminar_producto()
 
 
 def menu_eliminar_producto():
-    print("\n PENDIENTE DESARROLLO")
-    # TO DO: DESARROLLAR SEGUN DESCRIPCION
+    id = int(input("Ingrese el id del producto a eliminar"))
+    producto = db_get_producto_by_id(id)
+    if producto:
+        print(producto)
+        db_eliminar_producto(id)
+        print("Producto eliminado exitosamente!")
+    else:
+        print("No existe el producto con el id ingresado")
 
 
 """
@@ -116,8 +155,13 @@ menu_buscar_producto()
 
 
 def menu_buscar_producto():
-    print("\n PENDIENTE DESARROLLO")
-    # TO DO: DESARROLLAR SEGUN DESCRIPCION
+    id = int(input("Ingrese el id a buscar"))
+    producto = db_get_producto_by_id(id)
+
+    if not producto:
+        print("No se ha encontrado el producto")
+    else:
+        print(producto)
 
 
 """
@@ -130,5 +174,10 @@ menu_reporte_bajo_stock()
 
 
 def menu_reporte_bajo_stock():
-    print("\n PENDIENTE DESARROLLO")
-    # TO DO: DESARROLLAR SEGUN DESCRIPCION
+    minimo_stock = int(input("Ingrese el minimo stock"))
+    lista_productos = db_get_productos_by_condicion(minimo_stock)
+    if lista_productos:
+        for producto in lista_productos:
+            print(producto)
+    else:
+        print("No hay productos con stock menor a " + str(minimo_stock))

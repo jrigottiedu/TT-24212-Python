@@ -25,7 +25,7 @@ def validacion_get_categoria():
 def validacion_get_cantidad():
     while True:
         try:
-            cantidad = int(input("Cantidad: ").strip())
+            cantidad = int(input("Cantidad: "))
             if not cantidad:
                 print("No se admite dato nulo. Ingrese la cantidad: ")
             else:

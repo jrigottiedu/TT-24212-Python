@@ -2,7 +2,7 @@ import sqlite3
 
 # DECLARACION DE CONSTANTES
 # ruta_db = r"C:\Users\JPy\Documents\TT24212 Python\TT-24212-Python\Clase 15\inventario.db"
-ruta_db = r"D:\Dailutb\TT 2C2024 Python\Clases\Clase 15\inventario.db"
+ruta_db = r"C:\Users\JPy\Documents\TT24212 Python\TT-24212-Python\Clase 15\inventario.db"
 
 """
 db_crear_tabla_productos()
@@ -39,7 +39,9 @@ db_insertar_producto(producto)
 
 
 def db_insertar_producto(nombre, descripcion, categoria, cantidad, precio):
+
     try:
+        # Rutima que inserta en la Tabla
         conexion = sqlite3.connect(ruta_db)
         cursor = conexion.cursor()  # siempre igual
         # query = "INSERT INTO productos (nombre, descripcion, categoria, cantidad, precio) VALUES (?, ?, ?, ?, ?)"
@@ -47,10 +49,14 @@ def db_insertar_producto(nombre, descripcion, categoria, cantidad, precio):
         placeholder = (nombre, descripcion, categoria, cantidad, precio)
         cursor.execute(query, placeholder)
         conexion.commit()
+        state = True
     except Exception as error:
         print(f"Error: {error}")
+        conexion.close()
+        state = False
     finally:
         conexion.close()
+        return state
 
 
 """
@@ -62,8 +68,13 @@ db_get_productos()
 
 
 def db_get_productos():
-    print("\n PENDIENTE DESARROLLO")
-    # TO DO: DESARROLLAR SEGUN DESCRIPCION
+    conexion = sqlite3.connect(ruta_db)
+    cursor = conexion.cursor()  # siempre igual
+    query = "SELECT * FROM productos"
+    cursor.execute(query)
+    lista_productos = cursor.fetchall()  # retorna una lista de tuplas
+    conexion.close()
+    return lista_productos
 
 
 """
@@ -75,8 +86,14 @@ db_get_producto_by_id(id)
 
 
 def db_get_producto_by_id(id):
-    print("\n PENDIENTE DESARROLLO")
-    # TO DO: DESARROLLAR SEGUN DESCRIPCION
+    conexion = sqlite3.connect(ruta_db)
+    cursor = conexion.cursor()  # siempre igual
+    query = "SELECT * FROM productos WHERE id = ?"
+    placeholders = (id,)
+    cursor.execute(query, placeholders)
+    producto = cursor.fetchone()  # retorna una tupla
+    conexion.close()
+    return producto
 
 
 """
@@ -87,8 +104,13 @@ db_actualizar_producto(id, nueva_cantidad)
 
 
 def db_actualizar_producto(id, nueva_cantidad):
-    print("\n PENDIENTE DESARROLLO")
-    # TO DO: DESARROLLAR SEGUN DESCRIPCION
+    conexion = sqlite3.connect(ruta_db)
+    cursor = conexion.cursor()  # siempre igual
+    query = "UPDATE productos SET cantidad = ? WHERE id = ?"
+    placeholders = (nueva_cantidad, id)
+    cursor.execute(query, placeholders)
+    conexion.commit()
+    conexion.close()
 
 
 """
@@ -99,8 +121,13 @@ db_eliminar_producto(id)
 
 
 def db_eliminar_producto(id):
-    print("\n PENDIENTE DESARROLLO")
-    # TO DO: DESARROLLAR SEGUN DESCRIPCION
+    conexion = sqlite3.connect(ruta_db)
+    cursor = conexion.cursor()  # siempre igual
+    query = "DELETE FROM productos WHERE id = ?"
+    placeholders = (id,)
+    cursor.execute(query, placeholders)
+    conexion.commit()
+    conexion.close()
 
 
 """
@@ -111,5 +138,11 @@ db_get_productos_by_condicion(minimo_stock)
 
 
 def db_get_productos_by_condicion(minimo_stock):
-    print("\n PENDIENTE DESARROLLO")
-    # TO DO: DESARROLLAR SEGUN DESCRIPCION
+    conexion = sqlite3.connect(ruta_db)
+    cursor = conexion.cursor()  # siempre igual
+    query = "SELECT * FROM productos WHERE cantidad < ?"
+    placeholders = (minimo_stock,)
+    cursor.execute(query, placeholders)
+    lista_productos = cursor.fetchall()  # retorna una lista de tuplas
+    conexion.close()
+    return lista_productos
