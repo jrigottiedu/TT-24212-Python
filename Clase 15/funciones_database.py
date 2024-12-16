@@ -1,8 +1,14 @@
 import sqlite3
 
 # DECLARACION DE CONSTANTES
-# ruta_db = r"C:\Users\JPy\Documents\TT24212 Python\TT-24212-Python\Clase 15\inventario.db"
 ruta_db = r"C:\Users\JPy\Documents\TT24212 Python\TT-24212-Python\Clase 15\inventario.db"
+
+
+def conectar_db():
+    conexion = sqlite3.connect(ruta_db)
+    cursor = conexion.cursor()  # siempre igual
+    return conexion, cursor
+
 
 """
 db_crear_tabla_productos()
@@ -42,11 +48,10 @@ def db_insertar_producto(nombre, descripcion, categoria, cantidad, precio):
 
     try:
         # Rutima que inserta en la Tabla
-        conexion = sqlite3.connect(ruta_db)
-        cursor = conexion.cursor()  # siempre igual
-        # query = "INSERT INTO productos (nombre, descripcion, categoria, cantidad, precio) VALUES (?, ?, ?, ?, ?)"
-        query = "INSERT INTO productos  VALUES (NULL, ?, ?, ?, ?, ?)"
-        placeholder = (nombre, descripcion, categoria, cantidad, precio)
+        conexion, cursor = conectar_db()
+        query = "INSERT INTO productos (nombre, descripcion, categoria, cantidad, precio) VALUES (?, ?, ?, ?, ?)"
+        # query = "INSERT INTO productos  VALUES ( NULL, ?, ?, ?, ?, ?)"
+        placeholder = (precio, descripcion, categoria, cantidad, nombre)
         cursor.execute(query, placeholder)
         conexion.commit()
         state = True

@@ -64,6 +64,8 @@ def validacion_get_cantidad():
             cantidad = int(input("Cantidad: ").strip())
             if not cantidad:
                 print("No se admite dato nulo. Ingrese la cantidad: ")
+            elif cantidad <= 0:
+                print("La cantidad debe ser mayor a 0. Ingrese la cantidad: ")
             else:
                 return cantidad
 

@@ -14,7 +14,7 @@ Esta función utiliza a sqlite3 para conectarse con la base "inventario.db" y cr
 
 def db_crear_tabla_productos():
     try:
-        conexion = sqlite3.connect(ruta_db)
+        conexion = sqlite3.connect("inventario.db")
         cursor = conexion.cursor()
         cursor.execute(
             """CREATE TABLE IF NOT EXISTS productos (
@@ -52,6 +52,7 @@ def db_insertar_producto(producto):
         producto["cantidad"],
         producto["precio"],
     )
+
     cursor.execute(query, placeholders)
     conexion.commit()
     conexion.close()
