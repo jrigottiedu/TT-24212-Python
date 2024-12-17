@@ -1,4 +1,4 @@
-# Instalamos el modulo colorama
+# Ejecutar desde la consola el modulo colorama
 # pip install colorama
 
 # Importamos init y otros metodos de colorama
