@@ -96,7 +96,8 @@ def menu_actualizar_producto():
     if not get_producto:
         print("ERROR: no se ha encontrado ningún producto con el id {id}")
     else:
-        nueva_cantidad = int(input(f"Cantidad actual {get_producto[4]} - Nueva cantidad: "))
+        print(f"Cantidad actual {get_producto[4]} ")
+        nueva_cantidad = validacion_get_cantidad("Nueva cantidad")
         db_actualizar_producto(id, nueva_cantidad)
         print("Registro actualizado exitosamente!")
 

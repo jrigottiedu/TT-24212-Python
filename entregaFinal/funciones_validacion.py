@@ -10,10 +10,11 @@ validacion_get_nombre()
 def validacion_get_nombre():
     while True:
         nombre = input("Nombre: ").strip()
-        if not nombre:
-            print("No se admite dato nulo. Ingrese el nombre: ")
+        if nombre:  # si la variable nombre esta vacia
+            break
         else:
-            return nombre
+            print("No se admite dato nulo. Ingrese el nombre: ")
+    return nombre
 
 
 """
@@ -26,9 +27,8 @@ validacion_get_descripcion()
 
 
 def validacion_get_descripcion():
-    while True:
-        descripcion = input("Descripción: ").strip()
-        return descripcion
+    descripcion = input("Descripción: ").strip()
+    return descripcion  # return es equivalente a break
 
 
 """
@@ -58,10 +58,10 @@ validacion_get_cantidad()
 """
 
 
-def validacion_get_cantidad():
+def validacion_get_cantidad(mensaje="Cantidad: "):
     while True:
         try:
-            cantidad = int(input("Cantidad: ").strip())
+            cantidad = int(input(f"{mensaje} ").strip())
             if not cantidad:
                 print("No se admite dato nulo. Ingrese la cantidad: ")
             elif cantidad <= 0:

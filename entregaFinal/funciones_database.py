@@ -27,6 +27,9 @@ def db_crear_tabla_productos():
             )"""
         )
         conexion.commit()
+        # print("""El registro
+        #        se inserto
+        #        exitosamente""")
     except sqlite3.Error as e:
         print(f"Error al crear la tabla: {e}")
     finally:
